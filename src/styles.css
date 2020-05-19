@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+body{background: url(./assets/images/background-bg.jpg) 0 0/cover;}
+a{color: #ffffff;}
+a:focus, a:hover{color: #fde00d; text-decoration: none;}
+.pad0{padding: 0;}
+.mar0{margin:0;}
+.padtop5{padding-top: 5px;}
+.padleft10{padding-left: 10px;}
+#page-content-wrapper .container{position: relative; top: 60px;}
+/*#wrapper.active .navbar-header{padding-left:150px;}
+#wrapper .navbar-header{padding-left:70px;}*/
+.bdr-rad0{border-radius:0;}
+.marbtm25{margin-bottom: 25px;}
+.fleft{float: left;}
+.fright{float: right;}
+.disinblock{display: inline-block;}
+.padrb20{padding-right: 20px; padding-bottom: 20px;}
+.inner-block{padding: 60px 0 0 40px;}
+.clear{clear: both;}
+.boldtxt{font-weight: bold}
+
+.btn-primary {
+    color: #fff;
+    background-color: #23255c;
+    border-color: #4a385e;
+    padding: 5px 8px;
+}
+
+h1{
+    color: #ffffff;
+}
+
+li{
+    list-style-type: none;
+    color: #ffffff;
+}
+
+.padrht10{
+    padding-right:10px;
+}
+
+.bdy-container a{
+    color: #000000;
+}
+
+.bdy-container a:hover{
+    color: #82049b
+}
+
+.txt-normal{
+    font-weight: normal;
+}
+
+/* common top text */
+.user-txt{
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+    right: 210px;
+}
+
+.line{
+    padding-left: 15px;
+    color: #ffffff;
+}
+
+.logout{
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+
+.glyphicon-off{
+    color: #fff;
+    font-size: 11px;
+    padding-right: 10px;
+
+}
+
+.white-bg{
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 10px;
+    width: 80%;
+    padding: 30px 0 20px 0
+}

@@ -1,0 +1,14 @@
+.insurance-table{
+    background-color: #fbece2;
+    margin-top: 25px;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.insurance-table table{
+    margin-bottom: 0;
+}
+
+.add-policy{
+    background: #fff;
+    padding: 10px;
+}

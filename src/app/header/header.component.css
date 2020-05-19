@@ -1,0 +1,13 @@
+.navbar-inverse{
+    background: rgb(111,10,177);
+    background: linear-gradient(90deg, rgba(111,10,177,1) 0%, rgba(223,7,246,1) 33%, rgba(98,4,124,1) 100%);
+    border:0;
+}
+.navbar-inverse .navbar-brand{color: #ffffff; font-size: 22px; font-family: 'Vollkorn SC', sans-serif;}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{color: #ffffff;}
+.navbar{margin-bottom: 5px; z-index: 0; box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);}
+#navbar{display: block; float: right;; margin-right: 10px;}
+ul.user-admin{padding-left: 0;}
+.user-admin li{list-style-type: none; margin-top: 15px; margin-right: 30px; color: #ffffff; cursor: pointer; float: left;}
+.user-admin img{margin-right: 5px;}
+.user-admin a{color: #ffcc00;}

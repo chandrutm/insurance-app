@@ -1,0 +1,71 @@
+<div class="container inner-block">
+    <h1>Add Policy</h1>
+    <ul class="user-txt">
+            <li *ngFor="let user of users">Welcome,  {{user.firstName}} {{user.lastName}} <span class="line"> | </span></li>
+        </ul>
+    
+     <p class="logout"><span class="glyphicon glyphicon-off"></span><a [routerLink]="['/login']">Logout</a> <span class="line"> | </span> </p>
+    
+    <div class="form-horizontal white-bg bdy-container">
+        <div class="add-policy-sec">
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="policynum" class="col-sm-2 control-label">Policy Number</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="policynum" name="policynum" id="policynum">
+            </div>
+            <div class="feedback-red" *ngIf="policynumC?.isInvalid('policynum')">
+            policynum is empty.
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="policyissued" class="col-sm-2 control-label">Policy Issued On</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" id="policyissued">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="premium" class="col-sm-2 control-label">Policy Term</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="premium" name="premium" id="premium">
+            </div>
+            <div class="feedback-red" *ngIf="premiumC?.isInvalid('premium')">
+            premium is empty.
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="sumassured" class="col-sm-2 control-label">Sum Assured</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" id="sumassured">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="paymentfrequency" class="col-sm-2 control-label">Premium</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="paymentfrequency" name="paymentfrequency" id="paymentfrequency">
+            </div>
+            <div class="feedback-red" *ngIf="paymentfrequencyC?.isInvalid('premium')">
+            paymentfrequency is empty.
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="nextpaymentdate" class="col-sm-2 control-label">Premium last paid on</label>
+            <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="nextpaymentdate" name="nextpaymentdate" id="nextpaymentdate">
+            </div>
+            <div class="feedback-red" *ngIf="nextpaymentdateC?.isInvalid('nextpaymentdate')">
+            payment date is empty.
+          </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-10">
+                <a class="boldtxt padrht10" routerLink ="home">Back</a>
+                <button [disabled]="addFormC?.invalid" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+    
+</div>

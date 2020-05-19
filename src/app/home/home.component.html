@@ -1,0 +1,40 @@
+﻿
+<div class="container inner-block">
+    <h1>My Insurance - Home</h1>
+
+        <ul class="user-txt">
+            <li *ngFor="let user of users">Welcome,  {{user.firstName}} {{user.lastName}} <span class="line"> | </span></li>
+        </ul>
+    
+     <p class="logout"><span class="glyphicon glyphicon-off"></span><a [routerLink]="['/login']">Logout</a> <span class="line"> | </span> </p>
+
+     <div class="insurance-table">
+         <table class="table table-striped">
+            <thead>
+                <tr>
+                <th>Policy Number</th>
+                <th>Premium</th>
+                <th>Payment Frequency</th>
+                <th>Next Payment Date</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usercon of usercontacts">
+                    <td>{{usercon.id}}</td>
+                    <td>{{usercon.premium}}</td>
+                    <td>{{usercon.paymentfrequency}}</td>
+                    <td>{{usercon.nextpaymentdate}}</td>
+                    <td><button class="btn btn-primary">Pay</button></td>
+                    <td><button [routerLink]="'/policydetails'" class="btn btn-primary">Policy Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+            <div class="add-policy">
+                <button [routerLink]="'/addpolicy'" class="btn btn-primary">Add Policy</button>
+            </div>
+     </div>
+     
+</div>

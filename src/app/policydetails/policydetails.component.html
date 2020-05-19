@@ -1,0 +1,55 @@
+<div class="container inner-block">
+    <h1>My Insurance - Policy Details</h1>
+
+    <ul class="user-txt">
+        <li *ngFor="let user of users">Welcome,  {{user.firstName}} {{user.lastName}} <span class="line"> | </span></li>
+    </ul>
+    
+     <p class="logout"><span class="glyphicon glyphicon-off"></span><a [routerLink]="['/login']">Logout</a> <span class="line"> | </span> </p>
+
+    <div class="policydet-sec white-bg bdy-container">
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <th class="txt-normal">Policy Number</th>
+                    <td>INS123456789</td>
+                </tr>
+
+                <tr>
+                    <th class="txt-normal">Policy Issued on</th>
+                    <td>10/06/2020</td>
+                </tr>
+
+                <tr>
+                    <th class="txt-normal">Policy Term</th>
+                    <td>15 Year</td>
+                </tr>
+
+                <tr>
+                    <th class="txt-normal">Sum assured</th>
+                    <td>$100000</td>
+                </tr>
+
+                <tr>
+                    <th class="txt-normal">Premium</th>
+                    <td>$1000</td>
+                </tr>
+
+                <tr>
+                    <th class="txt-normal">Premium Last Paid on</th>
+                    <td>01/06/2019</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="clear"></div>
+                <div class="col-sm-offset-4 col-sm-10">
+                    <a class="boldtxt padrht10" routerLink ="home">Back</a>
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                </div>
+
+         <div class="clear"></div>
+            
+    </div>
+
+</div>
