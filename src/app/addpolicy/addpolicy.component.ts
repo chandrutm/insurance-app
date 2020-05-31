@@ -29,8 +29,8 @@ export class AddPolicyComponent implements OnInit {
         });
 
         this.addForm = this.formBuilder.group({
-          policynum: [Validators.required,],
-          premium: [Validators.required,],
+          policynum: [Validators.maxLength(12), Validators.required,],
+          premium: [Validators.maxLength(6), Validators.required,],
           paymentfrequency: ['', Validators.required],
           nextpaymentdate: ['', Validators.required]
         });
@@ -43,7 +43,6 @@ export class AddPolicyComponent implements OnInit {
     
     onSubmit() {
         this.userAddService.create(this.addForm.value);
-
         this.router.navigate(['']);
       }
 

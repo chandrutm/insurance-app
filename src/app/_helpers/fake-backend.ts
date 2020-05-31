@@ -9,6 +9,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
         let testUser = { id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
 
         // wrap in delayed observable to simulate server api call
@@ -40,6 +41,54 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 } else {
                     // return 401 not authorised if token is null or invalid
                     return throwError({ status: 401, error: { message: 'Unauthorised' } });
+                }
+            }
+
+            // register user
+            if (request.url.endsWith('/users/register') && request.method === 'POST') {
+                // get new user object from post body
+                let newUser = request.body;
+
+                // validation
+                let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;
+                if (duplicateUser) {
+                    return throwError({ error: { message: 'Username "' + newUser.username + '" is already taken' } });
+                }
+
+                // save new user
+                newUser.id = users.length + 1;
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+
+                // respond 200 OK
+                return of(new HttpResponse({ status: 200 }));
+            }
+
+            // pass through any requests not handled above
+            return next.handle(request);
+
+            // delete user
+            if (request.url.match(/\/users\/\d+$/) && request.method === 'DELETE') {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                    // find user by id in users array
+                    let urlParts = request.url.split('/');
+                    let id = parseInt(urlParts[urlParts.length - 1]);
+                    for (let i = 0; i < users.length; i++) {
+                        let user = users[i];
+                        if (user.id === id) {
+                            // delete user
+                            users.splice(i, 1);
+                            localStorage.setItem('users', JSON.stringify(users));
+                            break;
+                        }
+                    }
+
+                    // respond 200 OK
+                    return of(new HttpResponse({ status: 200 }));
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return throwError({ error: { message: 'Unauthorised' } });
                 }
             }
 

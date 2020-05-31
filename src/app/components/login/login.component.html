@@ -1,0 +1,27 @@
+<div class="container inner-block">
+    <div class="login-section">
+        <div class="bg-wrap">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Customer ID</label>
+                    <input type="email" formControlName="customerid" class="form-control" id="exampleInputEmail1" placeholder="" [ngClass]="{ 'is-invalid': submitted && f.customerid.errors }">
+                    <div *ngIf="submitted && f.customerid.errors" class="invalid-feedback">
+                        <div *ngIf="f.customerid.errors.required">Customerid is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a class="padleft10 boldtxt" href="">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

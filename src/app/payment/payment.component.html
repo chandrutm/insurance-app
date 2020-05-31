@@ -1,0 +1,80 @@
+<div class="container inner-block">
+    <h1>My Insurance - Payment</h1>
+
+    <ul class="user-txt">
+        <li *ngFor="let user of users">Welcome,  {{user.firstName}} {{user.lastName}} <span class="line"> | </span></li>
+    </ul>
+    
+     <p class="logout"><span class="glyphicon glyphicon-off"></span><a [routerLink]="['/login']">Logout</a> <span class="line"> | </span> </p>
+
+    <div class="payment-sec white-bg bdy-container">
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="txt-normal">Policy Number</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="policynum" id="policynum">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-normal">Premium</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="premium" id="premium">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-normal">Card Number</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="cardnum" id="cardnum">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-normal">Card Expiry Date</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" style="width:50%;" class="form-control" name="cardexpdate" id="cardexpdate">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-normal">CVV</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" style="width:20%;" class="form-control" name="cvv" id="cvv">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="txt-normal">Name on the card</th>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" class="form-control"  name="namecard" id="namecard">
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        <div class="clear"></div>
+                <div class="col-sm-offset-4 col-sm-10">
+                    <a class="boldtxt padrht10" routerLink ="home">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                </div>
+
+         <div class="clear"></div>
+            
+    </div>
+
+</div>

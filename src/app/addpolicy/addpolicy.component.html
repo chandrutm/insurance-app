@@ -12,7 +12,7 @@
         <div class="form-group">
             <label for="policynum" class="col-sm-2 control-label">Policy Number</label>
             <div class="col-sm-4">
-            <input type="text" class="form-control" formControlName="policynum" name="policynum" id="policynum">
+            <input type="text" class="form-control" maxlength="12" formControlName="policynum" name="policynum" id="policynum">
             </div>
             <div class="feedback-red" *ngIf="policynumC?.isInvalid('policynum')">
             policynum is empty.
@@ -42,7 +42,7 @@
         <div class="form-group">
             <label for="paymentfrequency" class="col-sm-2 control-label">Premium</label>
             <div class="col-sm-4">
-            <input type="text" class="form-control" formControlName="paymentfrequency" name="paymentfrequency" id="paymentfrequency">
+            <input type="text" class="form-control" maxlength="6" formControlName="paymentfrequency" name="paymentfrequency" id="paymentfrequency">
             </div>
             <div class="feedback-red" *ngIf="paymentfrequencyC?.isInvalid('premium')">
             paymentfrequency is empty.

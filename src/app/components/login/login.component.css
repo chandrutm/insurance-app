@@ -1,4 +1,4 @@
-.register-section{
+.login-section{
     margin: 150px 0 0 300px;
     width: 40%;
 }
@@ -11,11 +11,11 @@
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0,6px 20px 0 rgba(0,0,0,0.1);
 }
 
-.register-section .form-control{
+.login-section .form-control{
     border-radius: 30px;
     width: 75%;
 }
 
-.register-section .btn{
+.login-section .btn{
     margin-left: 20px;
 }

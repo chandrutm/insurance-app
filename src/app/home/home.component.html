@@ -26,7 +26,7 @@
                     <td>{{usercon.premium}}</td>
                     <td>{{usercon.paymentfrequency}}</td>
                     <td>{{usercon.nextpaymentdate}}</td>
-                    <td><button class="btn btn-primary">Pay</button></td>
+                    <td><button [routerLink]="'/payment'" class="btn btn-primary">Pay</button></td>
                     <td><button [routerLink]="'/policydetails'" class="btn btn-primary">Policy Details</button></td>
                 </tr>
             </tbody>
