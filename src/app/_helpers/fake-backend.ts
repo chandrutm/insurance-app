@@ -7,10 +7,9 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 export class FakeBackendInterceptor implements HttpInterceptor {
 
     constructor() { }
-
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-        let testUser = { id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' };
+        let testUser = { id: 1, username: 'admin', password: 'admin', firstName: 'admin', lastName: 'User' };
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
@@ -20,7 +19,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 if (request.body.username === testUser.username && request.body.password === testUser.password) {
                     // if login details are valid return user details
                     let body = {
-                        id: testUser.id,
+                        id: testUser.id, 
                         username: testUser.username,
                         firstName: testUser.firstName,
                         lastName: testUser.lastName
@@ -36,7 +35,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             if (request.url.endsWith('/users') && request.method === 'GET') {
                     // check for fake auth token in header and return users if valid, this security 
                     // is implemented server side in a real application
-                    if (request.headers.get('Authorization') === `Basic ${window.btoa('test:test')}`) {
+                    if (request.headers.get('Authorization') === `Basic ${window.btoa('admin:admin')}`) {
                     return of(new HttpResponse({ status: 200, body: [testUser] }));
                 } else {
                     // return 401 not authorised if token is null or invalid
